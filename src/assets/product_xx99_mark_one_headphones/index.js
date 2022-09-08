@@ -1,0 +1,5 @@
+export { default as image_category_page_preview } from './image-category-page-preview (1).jpg'
+export { default as image_gallery_4 } from './image-gallery-1 (4).jpg'
+export { default as image_gallery_5 } from './image-gallery-2 (4).jpg'
+export { default as image_gallery_6 } from './image-gallery-3 (4).jpg'
+export { default as image_product_2 } from './image-product (5).jpg'
