@@ -8,7 +8,7 @@ import Checkout from "./components/Checkout/Checkout"
 import { Routes, Route } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import { addCartTotal } from "./features/CartReducer"
-
+import { ScrollToTop } from "./utils/ScrollToTop"
 
 
 function App() {
@@ -24,6 +24,7 @@ function App() {
     }, [cartItems])
     
   return (
+  <ScrollToTop>  
     <main>
     <Cart />
     <Routes>
@@ -35,6 +36,7 @@ function App() {
       </Route>
     </Routes>
     </main>
+    </ScrollToTop>
   );
 }
 

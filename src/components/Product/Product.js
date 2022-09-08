@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { addToCart, removeItem } from "../../features/CartReducer"
 
@@ -40,6 +41,12 @@ const Product = () => {
           return item.id === id
         }) 
   //console.log(cartItems)
+  
+  useEffect(() => {
+    const scrollToTop = () => window.scrollTo(0, 0)
+    scrollToTop()
+  }, [])
+  
   
   return (
     <ProductWrapper >

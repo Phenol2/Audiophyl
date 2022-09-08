@@ -3,7 +3,7 @@ import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer"
 
 
-const SharedLayout = () => {
+ const SharedLayout = () => { 
   return (
     <>
       <Header />
