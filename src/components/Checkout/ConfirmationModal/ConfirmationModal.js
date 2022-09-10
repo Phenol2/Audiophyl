@@ -1,6 +1,9 @@
 import { useContext } from "react"
 import ctx from "../../../store/Storectx"
 
+import { useDispatch } from "react-redux"
+import { clearCart } from "../../../features/CartReducer"
+
 import {
   Wrapper,
   Confirm,
@@ -10,6 +13,7 @@ import {
 
 const ConfirmationModal = ({ info }) => {
   let {  details } = useContext(ctx)
+  let dispatch = useDispatch()
   
   return (
     <Wrapper>
@@ -20,6 +24,7 @@ const ConfirmationModal = ({ info }) => {
         </p>
         <StyledLink 
           to = "/"
+          onClick = {() =>  dispatch(clearCart())}
           >
           RETURN TO THE HOMEPAGE
         </StyledLink>

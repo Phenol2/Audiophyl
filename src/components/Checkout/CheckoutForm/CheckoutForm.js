@@ -1,5 +1,4 @@
-import BillingInfo from "./BillingInfo/BillingInfo"
-import AddressForm from "./AddressForm/AddressForm"
+import { BillingInfo, AddressForm} from "./"
 
 const CheckoutForm = ({ register, errors }) => {
   return (

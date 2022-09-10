@@ -14,36 +14,36 @@ import { IoMdCheckmark } from "react-icons/io"
 import { FaMoneyCheck, FaMoneyBillAlt } from "react-icons/fa"
 
 import { useForm, FormProvider } from "react-hook-form";
-import { useSelector, useDispatch } from "react-redux";
-import { clearCart } from "../../features/CartReducer"
+import { useSelector } from "react-redux";
 
 
-import CheckoutForm from "./CheckoutForm/CheckoutForm"
-import Emoney from "./Emoney/Emoney"
-import ConfirmationModal from "./ConfirmationModal/ConfirmationModal"
-import ProductSummary from "./ProductSummary/ProductSummary"
+
+import {
+  CheckoutForm,
+  Emoney,
+  ConfirmationModal,
+  ProductSummary
+} from "./"
+
 
 const Checkout = ({ cartItem }) => {
   let [payment, setPayment] = useState("cash")
   let {  details, setDetails } = useContext(ctx)
   
   
-  let dispatch = useDispatch()
   let { cartItems, total } = useSelector((store) => store.cart)
   let shipping = 50
   let VAT = +((0.2 * total).toFixed(2))
   let grandTotal = total + shipping + VAT
   
   
-  //const { register, formState: { errors }, handleSubmit } = useForm();
   const methods = useForm();
   const onFormSubmit = (data) => {
     setDetails({...data, shipping, VAT, grandTotal})
-    dispatch(clearCart())
   }
   
   let nestedArray = Object.entries(details)
-  //console.log(methods.formState)
+
   return (
     <FormProvider {...methods}>
     <CheckoutWrapper 
