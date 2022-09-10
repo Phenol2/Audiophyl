@@ -13,7 +13,7 @@ export const CheckoutWrapper = styled.form`
 
 export const Container = styled.div`
     width: 100%;
-    margin-block: 100px;
+    margin-block: 40px 100px;
     background-color: white;
     padding-block: 10px;
 `

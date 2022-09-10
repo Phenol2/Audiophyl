@@ -19,7 +19,6 @@ const Category = () => {
   let filteredProducts = service.filter(product => {
     return category === product.category
   })
-  //console.log(filteredProducts)   
   
   return(
       <CategoryWrapper>
