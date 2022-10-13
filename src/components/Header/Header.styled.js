@@ -25,7 +25,7 @@ export const StyledLink = styled(NavLink)`
       }
       }
       
-      &.${({activeClassName}) => activeClassName}{
+      &.${({activeclassname}) => activeclassname}{
         & > li{
           color: #ef5350;
           

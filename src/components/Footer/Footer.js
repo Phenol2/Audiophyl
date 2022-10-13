@@ -20,25 +20,25 @@ const Footer = () => {
       <Menus>
         <StyledLink 
           to = "/"
-          activeClassName= "active"
+          activeclassname= "active"
           >
           HOME
         </StyledLink>
         <StyledLink
         to = "/category/headphones"
-        activeClassName = "active"
+        activeclassname = "active"
         >
           HEADPHONES
         </StyledLink>
         <StyledLink
         to = "/category/speakers"
-        activeClassName = "active"
+        activeclassname = "active"
         >
           SPEAKER
         </StyledLink>
         <StyledLink
         to = "/category/earphones"
-        activeClassName = "active"
+        activeclassname = "active"
         >
           EARPHONES
         </StyledLink>

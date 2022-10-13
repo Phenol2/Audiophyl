@@ -1,7 +1,11 @@
 import { useEffect } from "react"
 import SharedLayout from "./SharedLayout"
+
+
 import { 
   Home,
+  Signup,
+  Signin,
   Category,
   Product,
   Cart,
@@ -28,11 +32,14 @@ function App() {
     <main>
     <Cart />
     <Routes>
-      <Route path = "/" element = {<SharedLayout />}>
+      
+    <Route path = "/" element = {<SharedLayout />}>
         <Route index element = {<Home />}/>
         <Route path = "/category/:category" element = {<Category />} />
         <Route path = "/product/:product" element = {<Product />} />
       </Route>
+         <Route path = "/signup" element = {<Signup />}/>
+         <Route path = "/signin" element = {<Signin />}/>
       <Route path = "/checkout" element = {
       <ProtectedRoute>
         <Checkout cartItem = {cartItems}/>

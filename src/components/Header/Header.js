@@ -40,7 +40,7 @@ const Header = () => {
       <Menus open = {isNavOpen}>
         <StyledLink 
         to = "/"
-        activeClassName = "active"
+        activeclassname = "active"
         >
           <li  onClick = {() => setIsNavOpen(false)}>
             <span>HOME</span>
@@ -49,7 +49,7 @@ const Header = () => {
         </StyledLink>
         <StyledLink 
         to = "/category/headphones"
-        activeClassName = "active"
+        activeclassname = "active"
         >
           <li onClick = {() => setIsNavOpen(false)}>
             <span>HEADPHONES</span>
@@ -58,7 +58,7 @@ const Header = () => {
         </StyledLink>
         <StyledLink 
         to = "/category/speakers"
-        activeClassName = "active"
+        activeclassname = "active"
         >
           <li  onClick = {() => setIsNavOpen(false)}>
             <span>SPEAKERS</span> 
@@ -67,7 +67,7 @@ const Header = () => {
         </StyledLink>
         <StyledLink 
         to = "/category/earphones"
-        activeClassName = "active"
+        activeclassname = "active"
         >
           <li  onClick = {() => setIsNavOpen(false)}>
             <span>EARPHONES</span>

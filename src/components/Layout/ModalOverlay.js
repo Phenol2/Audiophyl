@@ -20,10 +20,11 @@ import { useSelector } from "react-redux"
 
 import NumFormatter from "../../utils/NumFormatter"
 
+
+
 const ModalOverlay = () => {
   let {  modalOpen, setModalOpen } = useContext(ctx)
   let { cartItems, total } = useSelector((store) => store.cart)
-  
   
   
   return (

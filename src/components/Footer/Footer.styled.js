@@ -7,7 +7,7 @@ export const StyledLink = styled(NavLink)`
     margin-block: 15px;
     display: block;
     
-    &.${({activeClassName}) => activeClassName}{
+    &.${({activeclassname}) => activeclassname}{
       color: #ef5350;
     }
 `

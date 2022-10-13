@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+//import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { addToCart, removeItem } from "../../features/CartReducer"
 
@@ -14,6 +14,8 @@ import {
   Gallery
 } from "./Product.styled"
 
+import { motion,AnimatePresence } from "framer-motion"
+
 import OtherProduct from "./OtherProduct/OtherProduct"
 import CategoryLink from "./CategoryLink"
 
@@ -23,7 +25,26 @@ import { products } from "../../data/data"
 import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai"
 
 
+const imageVariant = {
+  hidden:{
+    filter: "blur(0.5rem)",
+  },
+  visible:{
+    filter: "blur(0)",
+    transition:{
+     duration: 2,
+    }
+  }
+}
 
+const galleryVariant = {
+  hidden:{
+    filter: "blur(4px)"
+  },
+  visible:{
+    filter: "blur(0)",
+  }
+}
 
 
 const Product = () => {
@@ -40,18 +61,15 @@ const Product = () => {
   let mainItem = cartItems.find(item => {
           return item.id === id
         }) 
-  //console.log(cartItems)
-  
-  useEffect(() => {
-    const scrollToTop = () => window.scrollTo(0, 0)
-    scrollToTop()
-  }, [])
-  
   
   return (
     <ProductWrapper >
       <Container>
         <Image 
+            as = {motion.img}
+            variants = {imageVariant}
+            initial = "hidden"
+            animate = "visible"
             src= {singleProduct.image.mobile} 
             alt = {singleProduct.name}
             />
@@ -74,13 +92,17 @@ const Product = () => {
       >
         <AiFillMinusCircle />
         </button>
-        <span>
+        <AnimatePresence>
+        <motion.span
+        exit = {{x: 100}}
+        >
         {
         mainItem 
         ? mainItem.amount 
         : singleProduct.amount
         }
-        </span>
+        </motion.span>
+        </AnimatePresence>
         <button   onClick = {() => dispatch(addToCart(singleProduct))
       }>
         <AiFillPlusCircle />
@@ -110,15 +132,27 @@ const Product = () => {
         </div>
       </ProductBox>
       <ProductGallery>
-        <Gallery 
+        <Gallery
+        as = {motion.img}
+        variants = {galleryVariant}
+        initial = "hidden"
+        whileInView = "visible"
             src = {singleProduct.gallery.first.mobile}
             alt = "gallery"
         />
         <Gallery 
+        as = {motion.img}
+        variants = {galleryVariant}
+        initial = "hidden"
+        whileInView = "visible"
             src = {singleProduct.gallery.second.mobile} 
             alt = "gallery"
         />
         <Gallery 
+        as = {motion.img}
+        variants = {galleryVariant}
+        initial = "hidden"
+        whileInView = "visible"
             src = {singleProduct.gallery.third.mobile} 
             alt = "gallery"
         />

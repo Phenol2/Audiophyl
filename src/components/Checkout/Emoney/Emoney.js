@@ -3,9 +3,18 @@ import {
   FieldContainer,
 } from "./Emoney.styled"
 
+import { motion, AnimatePresence } from "framer-motion"
+
 const Emoney = ({ register, errors, payment }) => {
   return (
-    <EmoneyWrapper payment = {payment}>
+    <AnimatePresence>
+    <EmoneyWrapper payment = {payment}
+    as = {motion.div}
+    initial = {{scale: 0}}
+    animate = {{scale: 1}}
+    transition = {{duration: 0.5}}
+    exit = {{scale: 0}}
+    >
       <FieldContainer>
       <label>e-Money Number</label>
         <input type = "number" {...register("emoneyNum", { required: true })} 
@@ -23,6 +32,7 @@ const Emoney = ({ register, errors, payment }) => {
       </FieldContainer>
       
     </EmoneyWrapper>
+    </AnimatePresence>
     )
 }
 

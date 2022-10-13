@@ -10,6 +10,7 @@ import {
   OptionCardTwo,
 } from "./Checkout.styled"
 
+
 import { IoMdCheckmark } from "react-icons/io"
 import { FaMoneyCheck, FaMoneyBillAlt } from "react-icons/fa"
 
